@@ -1,0 +1,20 @@
+<h1 class="text-center m-4">{{query}} News Section</h1>
+
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let item of articles">      
+      <div class="card my-3 mx-1" >
+          <img src="{{item.urlToImage}}" class="card-img-top" alt="..." height="150px">
+          <div class="card-body">
+            <h6 class="card-title title">{{item.title.slice(0,100)+"..."}}</h6>
+            <h6 class="source d-flex justify-content-between">
+              <span class="mx-1 float-left space">{{item.source.name}}</span>
+              <span class="mx-1 float-right space">{{item.publishedAt|date:"medium"}}</span>
+            </h6>
+            <p class="card-text desc">{{item.description.slice(0,200)+"..."}}</p>
+            <a href="{{item.url}}" class="btn btncolor btn-sm w-100 p-1">Read Full Article</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
